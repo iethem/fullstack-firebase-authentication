@@ -7,7 +7,13 @@ const prettierOptions = JSON.parse(
 
 module.exports = {
   parser: 'babel-eslint',
-  extends: ['airbnb', 'prettier'],
+  extends: [
+    'airbnb',
+    'prettier',
+    'react-app',
+    'plugin:import/errors',
+    'plugin:import/warnings',
+  ],
   plugins: ['prettier', 'react', 'react-hooks', 'jsx-a11y'],
   env: {
     jest: true,
@@ -78,5 +84,12 @@ module.exports = {
     'react/sort-comp': 0,
     'require-yield': 0,
     'react/react-in-jsx-scope': 0,
+  },
+  settings: {
+    'import/resolver': {
+      node: {
+        moduleDirectory: ['node_modules', 'src/'],
+      },
+    },
   },
 };
