@@ -21,6 +21,7 @@ module.exports = {
     ecmaFeatures: {
       jsx: true,
     },
+    endOfLine: 'auto',
   },
   rules: {
     'prettier/prettier': ['error', prettierOptions],
